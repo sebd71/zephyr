@@ -1,0 +1,48 @@
+/dts-v1/;
+
+#include <nxp/nxp_imx8ml_m7.dtsi>
+#include "hummingboard_pulse_imx8mp-pinctrl.dtsi"
+#include <zephyr/dt-bindings/gpio/gpio.h>
+
+/ {
+	model = "SolidRun Hummingboard Pulse iMX8M Plus M7";
+	compatible = "nxp,mimx8mp_evk";
+
+	chosen {
+		/* DDR */
+		zephyr,flash = &ddr_code;
+		zephyr,sram = &ddr_sys;
+
+		zephyr,console = &uart3;
+		zephyr,shell-uart = &uart3;
+	};
+
+	leds {
+		compatible = "gpio-leds";
+
+		user_led: D30 {
+			gpios = <&gpio5 28 GPIO_ACTIVE_LOW>;
+			label = "User LED";
+		};
+	};
+
+	aliases {
+		led0 = &user_led;
+	};
+};
+
+/* mikrobus uart */
+&uart3 {
+	status = "okay";
+	current-speed = <115200>;
+	pinctrl-0 = <&uart3_default>;
+	pinctrl-names = "default";
+};
+
+&gpio5 {
+	status = "okay";
+};
+
+&mailbox0 {
+	status = "okay";
+};

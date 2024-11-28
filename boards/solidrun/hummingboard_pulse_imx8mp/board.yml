@@ -1,0 +1,8 @@
+board:
+  name: hummingboard_pulse_imx8mp
+  vendor: solidrun
+  socs:
+  - name: mimx8ml8
+    variants:
+    - name: ddr
+      cpucluster: m7

@@ -1,0 +1,12 @@
+identifier: hummingboard_pulse_imx8mp/mimx8ml8/m7/ddr
+name: SolidRun Hummingboard Pulse iMX8M Plus (DDR)
+type: mcu
+arch: arm
+ram: 2048
+flash: 2048
+toolchain:
+  - zephyr
+  - gnuarmemb
+  - xtools
+supported:
+  - uart

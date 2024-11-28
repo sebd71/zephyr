@@ -162,6 +162,14 @@
 			status = "disabled";
 		};
 
+		uart3: uart@30880000 {
+			compatible = "nxp,imx-iuart";
+			reg = <0x30880000 0x10000>;
+			interrupts = <28 3>;
+			clocks = <&ccm IMX_CCM_UART3_CLK 0x68 12>;
+			status = "disabled";
+		};
+
 		uart1: uart@30860000 {
 			compatible = "nxp,imx-iuart";
 			reg = <0x30860000 0x10000>;
